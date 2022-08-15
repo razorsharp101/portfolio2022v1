@@ -4,7 +4,7 @@ import "./Hero.css";
 const Hero = () => {
   return (
     <section className="hero-main">
-      <div className="hero-content__mobile">
+       <div className="hero-content__mobile">
           <div>
             <span style={{ color: "#FBFF00" }}>"</span>
             <span>EVERYTHING SEEMS IMPOSSIBLE UNTIL IT IS DONE.</span>
