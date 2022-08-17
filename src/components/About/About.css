@@ -1,0 +1,129 @@
+.about-main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Bebas Neue", cursive;
+}
+.about-text {
+  font-size: clamp(1.2rem, 2vw, 2.8rem);
+  width: 60%;
+  text-align: center;
+}
+.about-choice {
+  font-size: clamp(2rem, 4.5vw, 5rem);
+  width: 60%;
+  background-color: red;
+  text-align: center;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  /* -webkit-text-stroke-width: 1px; */
+  -webkit-text-stroke-color: black;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin: 0;
+  border: 4px solid black;
+}
+.about-imgs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+}
+.about-imgs img {
+  height: 100px;
+  width: 100px;
+}
+.about-imgs .img-text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-imgs .img-text span {
+  font-size: 22px;
+}
+.about-cert {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cert-1,
+.cert-2 {
+  height: 35vh;
+  border: 1px solid black;
+  width: 35vw;
+}
+
+/* tablet */
+@media screen and (max-width: 1023px) {
+  .about-text {
+    width: 100%;
+    padding: 0 5px;
+  }
+  .about-choice {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .about-imgs {
+    column-gap: 10%;
+  }
+  .cert-1,
+  .cert-2 {
+    width: 45vw;
+  }
+}
+/* mobile */
+@media screen and (max-width: 697px) {
+  .about-text {
+    width: 100%;
+    padding: 0 5px;
+  }
+  .about-choice {
+    width: 100%;
+  }
+  .about-main {
+    height: auto;
+    padding: 12px 0;
+    row-gap: 8px;
+  }
+  .about-cert {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .about-imgs img {
+    width: 75px;
+    height: 75px;
+  }
+  .about-imgs {
+    width: 100%;
+    column-gap: 10%;
+  }
+  .about-imgs .img-text span {
+    font-size: 16px;
+  }
+  .cert-1,
+  .cert-2 {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 697px) {
+  .about-imgs {
+    column-gap: 5%;
+  }
+}
+@media screen and (max-width: 376px) {
+  .about-cert .cert-1,
+  .about-cert .cert-2 {
+    width: 95%;
+  }
+  .about-imgs {
+    column-gap: 5%;
+  }
+}
