@@ -1,16 +1,16 @@
 import React from "react";
-import "./About.scss";
+import "./About.css";
 
 const About = () => {
   return (
-    <section className="about">
-      <p className="about__main-text">
+    <section className="about-main">
+      <p className="about-text">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor
         laudantium voluptas maxime. Ipsum reprehenderit nihil eum tempore. Omnis
         excepturi soluta qui quam, aperiam est alias?
       </p>
-      <h3 className="about__main-choice">My preferred weapons of choice</h3>
-      <div className="about__main-imgs">
+      <h3 className="about-choice">My preferred weapons of choice</h3>
+      <div className="about-imgs">
         <div className="img-text">
           <img src="/assets/1.png" alt="" />
           <span>python</span>
@@ -44,13 +44,9 @@ const About = () => {
           <span>python</span>
         </div>
       </div>
-      <div className="about__main-cert">
-        <a href="#">
-          <img className="cert-1" src="/assets/cert1.png"></img>
-        </a>
-        <a href="#">
-          <img className="cert-2" src="/assets/cert2.png"></img>
-        </a>
+      <div className="about-cert">
+        <div className="cert-1">1</div>
+        <div className="cert-2">2</div>
       </div>
     </section>
   );

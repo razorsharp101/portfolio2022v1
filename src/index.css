@@ -1,8 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Audiowide&family=Bangers&family=Bebas+Neue&family=Bungee&family=Comic+Neue&family=Staatliches&display=swap');
+:root{
+  --font-bebas: "Bebas Neue", cursive;
+  --font-bungee: "Bungee", cursive;
+  --font-bangers: "Bangers", cursive;
+  --font-audiowide: "Audiowide", cursive;
+  --font-staatliches: "Staatliches", cursive;
+  --font-comic: "Comic Neue", cursive;
+
+}
+
 *, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 *::-webkit-scrollbar {
   display: none;
