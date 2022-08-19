@@ -96,7 +96,7 @@
   }
 }
 .hero-upper span {
-  font-family: "Amatic SC", cursive;
+  font-family: var(--font-amatic);
   font-size: 60px;
   line-height: 65px;
 }
