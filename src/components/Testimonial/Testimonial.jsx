@@ -6,13 +6,18 @@ import Slider from "react-slick";
 
 const Testimonial = () => {
   const settings = {
+    // className: "center",
+    // centerMode: true,
     dots: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    prevArrow: false,
+    nextArrow: false,
     autoplaySpeed: 3000,
     pauseOnHover: true,
+    lazyLoaded: true,
   };
   return (
     <section className="testimonial">
@@ -25,6 +30,7 @@ const Testimonial = () => {
         <Slider {...settings}>
           {[1, 2, 3].map((item, index) => (
             <div className="testimonial__item--card" key={index}>
+              {/* {item} */}
               <p className="testimonial__item--quote">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Sapiente consectetur repudiandae eveniet laudantium magni natus!
@@ -33,9 +39,13 @@ const Testimonial = () => {
                 className="testimonial__item--img"
                 src={`/assets/testi-bg-${index + 1}.jpg`}
               ></img>
-              <h2 className="testimonial__item--name">SOMETHING B. SOmething</h2>
+              <h2 className="testimonial__item--name">
+                SOMETHING B. SOmething
+              </h2>
               <p className="testimonial__item--super">"SomethingMAN"</p>
-              <p className="testimonial__item--company">(Something at something company)</p>
+              <p className="testimonial__item--company">
+                (Something at something company)
+              </p>
             </div>
           ))}
         </Slider>

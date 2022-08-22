@@ -9,13 +9,13 @@ import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (
-    <>
+    <div style={{ overflow: "hidden" }}>
       <Hero />
       <About />
-      <Projects/>
+      <Projects />
       <Testimonial />
       <Contact />
-    </>
+    </div>
   );
 }
 
