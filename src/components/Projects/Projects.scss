@@ -2,6 +2,14 @@
   width: 100%;
   padding: 15px 0;
   display: block;
+  &__subtitle{
+    text-align: center;
+    margin: 12px 0;
+    font-family: var(--font-amatic);
+    font-weight: bolder;
+    font-size: clamp(14px, 22px,26px);
+    padding: 0 12px;
+  }
   &__title {
     position: relative;
     height: 32vh;
@@ -42,7 +50,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-    row-gap: 50px;
+    row-gap: 30px;
 
     .card {
       width: 300px;

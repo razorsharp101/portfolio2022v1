@@ -8,6 +8,7 @@ const Projects = () => {
         <img src="/assets/bubble1.png"></img>
         <h2>Projects!</h2>
       </div>
+      <p className="projects__subtitle">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi rerum aut voluptatum nesciunt in deserunt?</p>
       <div className="projects__items">
         {[1, 2, 3, 4, 5, 6, 7].map((items, index) => (
           <div className="card" key={index}>

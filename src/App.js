@@ -4,14 +4,17 @@ import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import Testimonial from "./components/Testimonial/Testimonial";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 function App() {
   return (
     <>
       <Hero />
       <About />
       <Projects/>
-      {/* <Testimonial />
-      <Contact /> */}
+      <Testimonial />
+      <Contact />
     </>
   );
 }
