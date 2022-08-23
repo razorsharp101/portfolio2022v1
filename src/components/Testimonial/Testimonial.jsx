@@ -1,8 +1,7 @@
 import React from "react";
 import "./Testimonial.scss";
 import Slider from "react-slick";
-// import "~slick-carousel/slick/slick.css";
-// import "~slick-carousel/slick/slick-theme.css";
+import { motion } from "framer-motion";
 
 const Testimonial = () => {
   const settings = {
@@ -20,10 +19,17 @@ const Testimonial = () => {
     lazyLoaded: true,
   };
   return (
-    <section className="testimonial">
+    <section className="testimonial" id="testimonial">
       <div>
         <h2 className="testimonial__title">
-          What people thinks <br /> about my <strong>superpowers!</strong>
+          What people thinks <br /> about my
+          <motion.strong whileInView={{ opacity: [0, 1] }}
+          transition={{
+            delay: 0.75,
+            duration: 1,
+          }}>
+            superpowers!
+          </motion.strong>
         </h2>
       </div>
       <div className="testimonial__item">
