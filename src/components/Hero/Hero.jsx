@@ -1,16 +1,26 @@
 import React from "react";
 import "./Hero.css";
+import { useInView } from "react-intersection-observer";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 const Hero = () => {
+  const { ref, inView } = useInView();
+
   return (
-    <section className="hero-main">
+    <section id="home" className="hero-main">
       <div className="hero-content__mobile">
-        <div>
+        <motion.div
+          whileInView={{ opacity: [0, 1], scale: [0, 1] }}
+          transition={{
+            delay: 2.5,
+            duration: 1,
+          }}
+          viewport={{ once: true }}
+        >
           <span style={{ color: "#FBFF00" }}>"</span>
           <span>EVERYTHING SEEMS IMPOSSIBLE UNTIL IT IS DONE.</span>
           <span style={{ color: "#FBFF00" }}>"</span>
-        </div>
+        </motion.div>
       </div>
       <div className="hero-upper">
         <motion.h3
@@ -45,7 +55,7 @@ const Hero = () => {
           Full-time Developer and Part-time human being
         </motion.span>
       </div>
-      <nav className="hero-nav">
+      <nav className="hero-nav" ref={ref}>
         <ul>
           <motion.li
             whileInView={{ opacity: [0, 1], scale: [3, 1] }}
@@ -139,6 +149,21 @@ const Hero = () => {
           </motion.span>
         </div>
       </div>
+      <AnimatePresence>
+        {inView ? (
+          ""
+        ) : (
+          <motion.a
+            key="modal"
+            animate={{ x: [-540, 0], opacity: [0, 1] }}
+            exit={{ y: -740, opacity: [1, 0] }}
+            className="hero-floating"
+            href="#home"
+          >
+            <img src="/assets/iron.gif" />
+          </motion.a>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
