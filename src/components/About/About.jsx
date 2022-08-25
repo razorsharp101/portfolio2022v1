@@ -57,7 +57,7 @@ const About = () => {
               <motion.div variants={items} className="img-text" key={tech.name}>
                 <img src={urlFor(tech.icon)} alt={{ index }} />
                 <span>{tech.name}</span>
-                {console.log(tech)}
+                {/* {console.log(tech)} */}
               </motion.div>
             ))}
           </motion.div>

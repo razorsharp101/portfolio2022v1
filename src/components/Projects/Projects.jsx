@@ -41,7 +41,7 @@ const Projects = () => {
             key={index}
           >
             <h5>{items.project_name}</h5>
-            {console.log(items)}
+            {/* {console.log(items)} */}
             {/* <img src={urlFor(items.project_img)}></img> */}
             <div
               className="card__image"
@@ -57,7 +57,7 @@ const Projects = () => {
                 <span key={i}>{tech}</span>
               ))}
             </div>
-            {console.log(items)}
+            {/* {console.log(items)} */}
           </motion.div>
         ))}
       </div>
