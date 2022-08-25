@@ -109,19 +109,19 @@ const Contact = () => {
           initial="hidden"
           whileInView="show"
         >
-          <motion.a variants={items}>
+          <motion.a href='https://www.facebook.com/adamjaspherpacifico' target="_blank" variants={items}>
             <FaFacebook />
           </motion.a>
-          <motion.a variants={items}>
+          <motion.a href="https://twitter.com/PacificoAdam" target="_blank" variants={items}>
             <FaTwitter />
           </motion.a>
-          <motion.a variants={items}>
+          <motion.a href="https://discord.gg/JyMfbSyP" target="_blank" variants={items}>
             <FaDiscord />
           </motion.a>
-          <motion.a variants={items}>
+          <motion.a href="https://github.com/adampacifico" target="_blank" variants={items}>
             <FaGithub />
           </motion.a>
-          <motion.a variants={items}>
+          <motion.a href="https://www.linkedin.com/in/adam-pacifico-1a3b3220a/" target="_blank" variants={items}>
             <FaLinkedin />
           </motion.a>
         </motion.div>
