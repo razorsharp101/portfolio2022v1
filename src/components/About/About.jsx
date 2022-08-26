@@ -68,7 +68,8 @@ const About = () => {
                 x: [-40, 0],
               }}
               viewport={{ once: true }}
-              href="#"
+              href="https://www.freecodecamp.org/certification/adampacifico/front-end-development-libraries"
+              target="_blank"
             >
               <img className="cert-1" src="/assets/cert1.png"></img>
             </motion.a>
@@ -78,7 +79,8 @@ const About = () => {
                 x: [40, 0],
               }}
               viewport={{ once: true }}
-              href="#"
+              href="https://www.freecodecamp.org/certification/adampacifico/responsive-web-design"
+              target="_blank"
             >
               <img className="cert-2" src="/assets/cert2.png"></img>
             </motion.a>

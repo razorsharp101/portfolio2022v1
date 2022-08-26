@@ -5,7 +5,7 @@ import { urlFor, client } from "../../client";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
-
+  const [hoveer, setHoveer] = useState("");
   useEffect(() => {
     const query = '*[_type == "projects"] | order(priority asc) ';
 
@@ -26,7 +26,10 @@ const Projects = () => {
       </motion.div>
       <p className="projects__subtitle">
         These are the projects I have created and participated in throughout my
-        adventure.<strong style={{ fontSize: "30px" }}> The manifestation of my quirks!</strong>
+        adventure.
+        <strong style={{ fontSize: "30px" }}>
+          The manifestation of my quirks!
+        </strong>
       </p>
       <div className="projects__items">
         {projects.map((items, index) => (
@@ -41,23 +44,45 @@ const Projects = () => {
             key={index}
           >
             <h5>{items.project_name}</h5>
-            {/* {console.log(items)} */}
-            {/* <img src={urlFor(items.project_img)}></img> */}
-            <div
+            <motion.div
+              onMouseOver={(e) => {
+                setHoveer(e.currentTarget.id);
+              }}
+              id={items.project_name}
+              onHoverEnd={() => setHoveer(false)}
               className="card__image"
               style={{ backgroundImage: `url(${urlFor(items.project_img)})` }}
-            ></div>
+            >
+              {hoveer == items.project_name ? (
+                <div className="hoveer">
+                  {items.message ? (
+                    <p>
+                      <strong>CONFIDENTIAL!</strong> <br></br>
+                      {items.message}
+                    </p>
+                  ) : (
+                    <>
+                      <a target="_blank" href={items.demo_link}>
+                        View Demo
+                      </a>
+                      <a target="_blank" href={items.github_link}>
+                        Github Repo
+                      </a>
+                    </>
+                  )}
+                </div>
+              ) : (
+                ""
+              )}
+            </motion.div>
+            {/* {hoveer ? alert(hoveer) : ""} */}
+
             <div className="card__details">
               <strong>Made of</strong>
-              {/* <span>React</span>
-              <span>Html</span>
-              <span>CSs</span>
-              <span>Something</span> */}
               {items.tech.map((tech, i) => (
                 <span key={i}>{tech}</span>
               ))}
             </div>
-            {/* {console.log(items)} */}
           </motion.div>
         ))}
       </div>

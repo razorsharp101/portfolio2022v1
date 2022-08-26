@@ -2,13 +2,18 @@
   width: 100%;
   padding: 15px 0;
   display: block;
-  &__subtitle{
+  &__subtitle {
     text-align: center;
-    margin: 12px 0;
+    margin: 12px auto;
     font-family: var(--font-amatic);
     font-weight: bolder;
-    font-size: clamp(14px, 22px,26px);
+    font-size: clamp(14px, 22px, 26px);
     padding: 0 12px;
+    width: 70%;
+
+    @media (max-width: 756px) {
+      width: 100%;
+    }
   }
   &__title {
     position: relative;
@@ -65,7 +70,7 @@
         font-size: 2.2rem;
         text-align: center;
         font-family: var(--font-staatliches);
-        letter-spacing: .7px;
+        letter-spacing: 0.7px;
         z-index: 5;
         background-color: white;
       }
@@ -73,7 +78,8 @@
       //   width: 100%;
       //   height: 80%;
       // }
-      &__image{
+
+      &__image {
         width: 100%;
         height: 100%;
         background-position: center;
@@ -82,9 +88,47 @@
         z-index: 2;
         background-color: black;
         transition: 0.4s;
-        &:hover{
+        position: relative;
+        &:hover {
           transform: scale(1.2) !important;
           cursor: pointer;
+          .hoveer {
+            right: 0;
+          }
+        }
+        .hoveer {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          transition: all 0.4s;
+          inset: 0;
+          background-color: rgba(0, 0, 0, 0.4);
+          z-index: 3;
+          display: flex;
+          justify-content: center;
+          column-gap: 20px;
+          align-items: center;
+          font-family: var(--font-bangers);
+          a {
+            text-decoration: none;
+            color: #ff5722;
+            font-size: 25px;
+            -webkit-text-stroke: 1px white;
+            transition: 0.4s;
+            &:hover {
+              transform: scale(1.2);
+              color: yellow;
+              -webkit-text-stroke: 1px black;
+
+            }
+          }
+          p {
+            width: 80%;
+            color: black;
+            background-color: white;
+            text-align: center;
+            border: 2px solid black;
+          }
         }
         // background-position: center;
       }
@@ -100,12 +144,12 @@
         transition: all 0.3s ease-in-out;
         z-index: 5;
         padding: 12px 0;
-        strong{
-            font-family: var(--font-staatliches);
-            font-size: .80rem;
+        strong {
+          font-family: var(--font-staatliches);
+          font-size: 0.8rem;
         }
-        span{
-            font-size: 1.25rem;
+        span {
+          font-size: 1.25rem;
         }
       }
     }

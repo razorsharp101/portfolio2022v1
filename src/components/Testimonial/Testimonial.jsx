@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Testimonial.scss";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
+import { urlFor, client } from "../../client";
 
 const Testimonial = () => {
   const settings = {
-    // className: "center",
-    // centerMode: true,
     dots: true,
     infinite: true,
     slidesToShow: 1,
@@ -18,40 +17,48 @@ const Testimonial = () => {
     pauseOnHover: true,
     lazyLoaded: true,
   };
+
+  const [testmonial, setTestimonial] = useState([]);
+  // const [hoveer, setHoveer] = useState("");
+  useEffect(() => {
+    const query = '*[_type == "testimonials"]';
+
+    client.fetch(query).then((data) => setTestimonial(data));
+  }, []);
+
   return (
     <section className="testimonial" id="testimonial">
       <div>
         <h2 className="testimonial__title">
-          What people thinks <br /> about my
-          <motion.strong whileInView={{ opacity: [0, 1] }}
-          transition={{
-            delay: 0.75,
-            duration: 1,
-          }}>
+          What people thinks about my
+          <motion.strong
+            whileInView={{ opacity: [0, 1] }}
+            transition={{
+              delay: 0.75,
+              duration: 1,
+            }}
+          >
             superpowers!
           </motion.strong>
         </h2>
       </div>
       <div className="testimonial__item">
         <Slider {...settings}>
-          {[1, 2, 3].map((item, index) => (
+          {testmonial.map((item, index) => (
             <div className="testimonial__item--card" key={index}>
-              {/* {item} */}
+              {console.log(item)}
               <p className="testimonial__item--quote">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Sapiente consectetur repudiandae eveniet laudantium magni natus!
+                {item.message
+                  ? item.message
+                  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas libero illum corrupti vel!"}
               </p>
               <img
                 className="testimonial__item--img"
-                src={`/assets/testi-bg-${index + 1}.jpg`}
+                src={urlFor(item.imgurl)}
               ></img>
-              <h2 className="testimonial__item--name">
-                SOMETHING B. SOmething
-              </h2>
-              <p className="testimonial__item--super">"SomethingMAN"</p>
-              <p className="testimonial__item--company">
-                (Something at something company)
-              </p>
+              <h2 className="testimonial__item--name">{item.name}</h2>
+              <p className="testimonial__item--super">"{item.superhero}"</p>
+              <p className="testimonial__item--company">({item.company})</p>
             </div>
           ))}
         </Slider>
