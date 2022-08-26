@@ -125,7 +125,7 @@ const Contact = () => {
             <FaLinkedin />
           </motion.a>
         </motion.div>
-        <motion.a whileInView={{ y: [40, 0] }} className="cv">DOWNLOAD CV</motion.a>
+        <motion.a whileInView={{ y: [40, 0] }} target="_blank" href="https://drive.google.com/file/d/1YhMpVIK533Zmtp9Lmfh47Dz1O8ifwpid/view?usp=sharing" className="cv">DOWNLOAD CV</motion.a>
       </div>
     </section>
   );

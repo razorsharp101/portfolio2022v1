@@ -56,7 +56,7 @@ const Testimonial = () => {
                 className="testimonial__item--img"
                 src={urlFor(item.imgurl)}
               ></img>
-              <h2 className="testimonial__item--name">{item.name}</h2>
+              <a className="testimonial__item--name" href={item.socmedlink} target="_blank">{item.name}</a>
               <p className="testimonial__item--super">"{item.superhero}"</p>
               <p className="testimonial__item--company">({item.company})</p>
             </div>

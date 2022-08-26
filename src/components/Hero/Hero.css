@@ -127,11 +127,13 @@
   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;
+  padding: 4px;
 }
 .hero-nav ul li:hover {
   cursor: pointer;
-  scale: 1.1 !important;
   transition: all 0.3s ease-in-out;
+  background-image: url("../../../public/assets/giphy.gif");
+  background-size: contain;
 }
 .hero-content {
   height: 47%;

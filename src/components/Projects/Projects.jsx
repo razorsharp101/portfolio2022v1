@@ -65,9 +65,13 @@ const Projects = () => {
                       <a target="_blank" href={items.demo_link}>
                         View Demo
                       </a>
-                      <a target="_blank" href={items.github_link}>
-                        Github Repo
-                      </a>
+                      {items.github_link ? (
+                        <a target="_blank" href={items.github_link}>
+                          Github Repo
+                        </a>
+                      ) : (
+                        ""
+                      )}
                     </>
                   )}
                 </div>
